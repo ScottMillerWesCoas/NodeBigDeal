@@ -2,32 +2,26 @@
 Building Servers/TCP connections for sockets in node, including an inter-terminal chat app.  Fun!
 
 #NOTES: 
-
-Just typing node w/o an argument (file to run) brings up a fun REPL (read evaluate print loop) you can write functions in, etc. 
+1. Just typing node w/o an argument (file to run) brings up a fun REPL (read evaluate print loop) you can write functions in, etc. 
 
 ##WHAT’S NODE? 
-v8, the javascript engine inside of chrome, is the foundation upon which node is built 
+1. v8, the javascript engine inside of chrome, is the foundation upon which node is built 
 (according to Ryan Dahl, the creator of node, it’s focus is on networking the right way) 
-Node.js is a runtime environment/toolset, libraries for running JS applications outside the browser - work very well with web sockets, webRTC
-Node can idle, OS unschedules, schedules back when timeout is done 
-Node doesn’t need to be forcefully exited, it exits when there’s nothing left to do, but it knows not to exit if you say have a setInterval going 
-Just type node filename.js when you’re in the folder in terminal - sweet!
-
+2. Node.js is a runtime environment/toolset, libraries for running JS applications outside the browser - work very well with web sockets, webRTC
+3. Node can idle, OS unschedules, schedules back when timeout is done 
+1. Node doesn’t need to be forcefully exited, it exits when there’s nothing left to do, but it knows not to exit if you say have a setInterval going 
+1. Just type node filename.js when you’re in the folder in terminal to execute the file - sweet!
+1. mostly used to run real-time server applications and shines through it’s performance using non-blocking I/O and asynchronous events 
+1. Node is single-threaded, so not good for very long-running calculations/operations
+1. process is the global object in node, as opposed to window in front-end JS. 
+1. Node is great for streaming or event-driven applications like chat applications, game servers, ad servers, streaming servers
+1. Node also good for building out an API on the backend, still using JS
+used by Microsoft, Yahoo!, LinkedIn, eBay, NYT
 
 ##WHY NODE? 
-NODE HANDLES CONCURRENCY WELL, 'CAUSE IT NEVER WAITS FOR ANYTHING 
-ex. you send 100 simultaneous requests (say using apache bench in the terminal with ab -n 100 -c 100 http://127.0.0.1:8000 ) and the response contains 2 parts:  ‘hello' in the body as part 1 and ‘world’ is in a setTimeout that comes after 2 seconds (like above).  The exciting thing is that if this weren’t non-blocking, if you used apache bench and sent 100 requests at this server, it would take 200 seconds, because it would wait for each 2 second setTimeout to finish before engaging the next request, but with node it still takes just 2 seconds because it handles all the requests as they come in (in parallel)    
+1. NODE HANDLES CONCURRENCY WELL, 'CAUSE IT NEVER WAITS FOR ANYTHING 
+1. ex. you send 100 simultaneous requests (say using apache bench in the terminal with ab -n 100 -c 100 http://127.0.0.1:8000 ) and the response contains 2 parts:  ‘hello' in the body as part 1 and ‘world’ is in a setTimeout that comes after 2 seconds (like above).  The exciting thing is that if this weren’t non-blocking, if you used apache bench and sent 100 requests at this server, it would take 200 seconds, because it would wait for each 2 second setTimeout to finish before engaging the next request, but with node it still takes just 2 seconds because it handles all the requests as they come in (in parallel)    
 
-mostly used to run real-time server applications and shines through it’s performance using non-blocking I/O and asynchronous events 
-
-Node is single-threaded, so not good for very long-running calculations/operations
-
-process is the global object in node, as opposed to window in front-end JS. 
-
-Node is great for streaming or event-driven applications like chat applications, game servers, ad servers, streaming servers
-
-Node also good for building out an API on the backend, still using JS
-used by Microsoft, Yahoo!, LinkedIn, eBay, NYT
 
 ##Headers
 node has http library built in which allows for client and server side http
