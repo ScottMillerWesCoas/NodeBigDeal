@@ -90,8 +90,8 @@ before HTTP 1.1, the connection was just cut at the end of each message, now wit
 
 ##NODE INTER-TERMINAL WINDOW CHAT APP
 
-- [] FOR A LIL' INTER-TERMINAL WINDOW CHAT APP, simply navigate to the folder containing this file in terminal, TYPE node chatAppNode.js (or whatever you renamed this file), then open another terminal window (or 2 to see this thing work)
-- [] cd into the right folder and type telnet localhost 3003 (or whatever the server is listening to, listed below on line 38) and type away in either of those other terminals for chat app magic; 
+- [ ] FOR A LIL' INTER-TERMINAL WINDOW CHAT APP, simply navigate to the folder containing this file in terminal, TYPE node chatAppNode.js (or whatever you renamed this file), then open another terminal window (or 2 to see this thing work)
+- [ ] cd into the right folder and type telnet localhost 3003 (or whatever the server is listening to, listed below on line 38) and type away in either of those other terminals for chat app magic; 
 
 ##MISC. 
 1. Just typing node w/o an argument (file to run) brings up a fun REPL (read evaluate print loop) you can write functions in, etc. 
