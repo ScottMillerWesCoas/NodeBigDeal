@@ -56,10 +56,10 @@ in headers, there’s the key “Connection”, which is auto-set to “keep-ali
 Transfer-Encoding: chunked allows the sending of variable-length responses over a persistent connection 
 
 ##TO TEST RES IN NODE: 
-cd into folder, run node server.js (or whatever your file is called), once server is up and running
-Open new terminal window, cd to that folder, then enter into terminal: 
+1. cd into folder, run node server.js (or whatever your file is called), once server is up and running
+1. Open new terminal window, cd to that folder, then enter into terminal: 
 curl http://localhost:8000 - or whatever port your server is set to listen to and you’ll get the res.write(‘xxx’), res.end(‘xxx’) back in terminal  - or go to url localhost:8000 in chrome of course
-to inspect the headers in your res, simply type curl -i  http://localhost:8000 into the terminal 
+1. to inspect the headers in your res, simply type curl -i  http://localhost:8000 into the terminal 
 Example: 
 res headers 
 HTTP/1.1 200 OK
@@ -77,13 +77,13 @@ before HTTP 1.1, the connection was just cut at the end of each message, now wit
 
 ##TO LOAD TEST IN NODE USING APACHE BENCH (BUILT-IN): 
 cd into proper dir and use: 
-ab -n 100 -c 100 http://192.168.0.5:8000/
+ab -n 100 -c 100 http://192.168.9.9:8000/ - or whatever your computer's hostname is, and the port your server is listening on
 
 in the terminal.  Here’s the breakdown of what that means: 
 ab —  apache bench
 -n 100 — -n is number of requests to perform, so here we’re saying perform 100 requests
 -c 100 — -c is concurrency, how many requests to make at one time, here we’re saying make all 100 requests simultaneously
-http://192.168.0.5:8000/ — important - you must use the hostname, my computer’s hostname is 192.168.0.5 (find in system preferences/sharing/remote login), then we’re on port 8000 so http://192.168.0.5:8000/  and you must put the / at the very end!
+http://192.168.9.9:8000/ — important - you must use the hostname, if my computer’s hostname is 192.169.9.9 (find in system preferences/sharing/remote login), then we’re on port 8000 so http://192.168.9.9:8000/  and you must put the / at the very end!
 
 
 ##NODE INTER-TERMINAL WINDOW CHAT APP
