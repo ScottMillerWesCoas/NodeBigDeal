@@ -30,6 +30,7 @@ var s = http.createServer(function(req, res){
     setTimeout(function(){
         res.end('my game just rewinds\n'); 
         }, 2000);  
+    //res.end('my game just rewinds\n');
 })
 
 s.listen(8000); 
