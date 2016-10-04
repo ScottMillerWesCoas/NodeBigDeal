@@ -41,6 +41,10 @@ s.on('request', function(req, res){
         }, 2000);  
 }); 
 
+s.on('close', function(){
+  console.log('you have closed the server'); 
+}); 
+
 s.listen(8000); 
 
 
