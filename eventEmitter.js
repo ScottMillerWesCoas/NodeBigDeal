@@ -16,5 +16,9 @@ logger.on('warn', function(message){
  
 }); 
 
+logger.on('message', function(message){
+       console.log("MESSAGE: " + message);  
+}); 
+
 logger.emit('error', 'you effed up, man!!'); 
 logger.emit('warn', 'async party?'); 

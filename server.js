@@ -24,14 +24,22 @@
 /* ANOTHER VERSION OF AN http server in NODE
 */
 var http = require('http'); 
-var s = http.createServer(function(req, res){
-    res.writeHead(200, {"Content-Type":"text/plain"});
+var s = http.createServer(
+    // res.writeHead(200, {"Content-Type":"text/plain"});
+    // res.write("isn't this great your flight lands at 8 \nMy flight leaves at 9\n"); 
+    // setTimeout(function(){
+    //     res.end('my game just rewinds\n'); 
+    //     }, 2000);  
+    //res.end('my game just rewinds\n');
+); 
+
+s.on('request', function(req, res){
+ res.writeHead(200, {"Content-Type":"text/plain"});
     res.write("isn't this great your flight lands at 8 \nMy flight leaves at 9\n"); 
     setTimeout(function(){
         res.end('my game just rewinds\n'); 
         }, 2000);  
-    //res.end('my game just rewinds\n');
-})
+}); 
 
 s.listen(8000); 
 
