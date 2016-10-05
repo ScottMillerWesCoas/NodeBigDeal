@@ -1,0 +1,31 @@
+[
+    { 
+      "key": 0, 
+      "categoryName": "The Copernicus Game",
+      "categoryTag": "An immersive 3D environment that tracks player gestures and implements real-world physics to test a player's understanding of core kinmatic concepts, developed in partnership with the Newport-Mesa Unified School District",
+       "categoryDescriptionA": "Implemented agile processes and frequently made modifications based on end user feature requests",
+      "categoryDescription0": "Reduced false positives and improved tracking responsiveness by modifying tracking library to include picture taking functionality",
+      "categoryDescription1": "Reduced game latency by continuously re-writing video to canvas and modifying library to only search center slice of canvas",
+      "categoryDescription2": "Parallelized workload using web workers",
+      "categoryDescription3": "Implemented real-time audio using WebRTC",
+      "categoryDescription4": "Engineered immersive 3D environment using Three.js/WebGL"
+    },
+    { 
+      "key": 1, 
+      "categoryName": "Giterate",
+      "categoryTag": "Automated whiteboarding session with testing and analysis of job candidate coding tendencies",
+      "categoryDescriptionA": "Implemented TDD to handle various user input errors and routing issues through Mocha Chai testing",
+      "categoryDescription0": "Maintained persistence of hiring candidate information in MongoDB",
+      "categoryDescription1": "Dynamically updated employer DB with completed algorithmic challenges",
+      "categoryDescription2": "Developed algorithmic parallel to AST for checking hiring candidate coding tendencies/Big-O notation"
+    },
+    { 
+      "key": 2, 
+      "categoryName": "Command_Shift",
+      "categoryTag": "Automated nursing duties delegator for Ivy Creek Healthcare and Wellness Center, San Gabriel, CA",
+       "categoryDescriptionA": "Implemented robust testing to handle user errors, integrity of database using Mocha Chai",
+      "categoryDescription0": "Route testing with Supertest",
+      "categoryDescription1": "Provided nurses with on-the-go access through the implementation of a React Native mobile application", 
+      "categoryDescription2": "Engineered API to sync with emplyer DB"
+    }
+]
