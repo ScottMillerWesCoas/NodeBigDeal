@@ -1,0 +1,24 @@
+{
+  "name": "nodebigdeal",
+  "version": "1.0.0",
+  "description": "working with node and express",
+  "main": "server.js",
+  "scripts": {
+    "test": "mocha",
+    "start": "node expressServer.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ScottMillerWesCoas/NodeBigDeal.git"
+  },
+  "author": "Scott Miller",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ScottMillerWesCoas/NodeBigDeal/issues"
+  },
+  "homepage": "https://github.com/ScottMillerWesCoas/NodeBigDeal#readme",
+  "dependencies": {
+    "express": "^4.14.0",
+    "request": "^2.75.0"
+  }
+}
