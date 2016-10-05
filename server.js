@@ -42,7 +42,7 @@ s.on('request', function(req, res){
      //req.pipe(res); //THE setTimeout BELOW DOESN'T RUN with req.pipe(res), it includes a res.end() apparently. 
      //uncomment req.pipe(res) and in terminal use curl -d 'whatevs' http://localhost:8000 to get 'whatevs' back in terminal
     var file = fs.createReadStream('README.md'); 
-    var newFile = fs.createWriteStream('writtenFiles/bigFileUpload.md');   
+    var newFile = fs.createWriteStream('writtenFiles/newReadMe.md');   
     var fileBytes = req.headers['content-length']; 
     var uploadedBytes = 0; 
     req.on('readable', function(){
