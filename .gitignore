@@ -1,5 +1,8 @@
 videoplayback.mp4
 node_modules
 writeThis2.txt
-writtenFiles/newReadMe.md
+writtenFiles
 writtenFiles/bigFileUpload.md
+.DS_Store
+websites
+npm-debug.log
