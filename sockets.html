@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+  <head>
+    <meta charset="UTF-8">
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+     <script src='/socket.io/socket.io.js'></script>
+     <link href='https://fonts.googleapis.com/css?family=Exo+2:400,900' rel='stylesheet' type='text/css'>
+
+  </head>
+
+  <body>
+    </div>
+    <div id='status' style="font-family:'Exo 2'; color: #00aced; font-size: 30px; text-shadow: 2px 2px 2px #000; padding-left: 30px; width: 525px"></div>
+      <input id='chat' placeholder="search twitter for.." type='text'/><button id='target'>Search Twitter!</button>
+    <div id='bg' style=' background: url("http://www.lovemashup.com/wp-content/uploads/2016/03/mashuparty-confetti1.jpg")no-repeat center center fixed;
+  border-radius: 15px; width: 1100px; opacity: .9'>
+    <div id="game-box" style="font-family:'Exo 2'; font-size: 30px; text-shadow: 1px 1px 1px #000; padding-left: 30px; width: 525px">
+    </div>
+    
+    
+    
+    </div>
+
+<script>
+  function getRandomColor() {
+    var letters = '0123456789ABCDEF';
+    var color = '#';
+    for (var i = 0; i < 6; i++ ) {
+        color += letters[Math.floor(Math.random() * 16)];
+    }
+    return color;
+}
+
+  var socket = io.connect('http://localhost:8080'); 
+  socket.on('connect', function(data){
+    $('#status').html('Twitter Searcher!<br><img src="https://upload.wikimedia.org/wikipedia/en/thumb/9/9f/Twitter_bird_logo_2012.svg/600px-Twitter_bird_logo_2012.svg.png" width=20%/>'); 
+  }); 
+  socket.on('messages', function(name, tweet){
+      $('#game-box').prepend('<p style="background-color: white; border: 2px solid black; border-radius: 10px; color:' + getRandomColor() + '">' + name + ': ' + tweet + '</p>')
+  });
+  $('#target').click(function(e){
+    var message = $('#chat').val(); 
+     $('#game-box').text('Searching twitter for ' + message).css('color', 'white');
+     setTimeout(function(){
+      $('#game-box').text('');
+     },3000); 
+      socket.emit('messages', message); 
+  });  
+
+</script>
+
+  </body>
+
+</html>
+
+
+
+
+
+
+
+
