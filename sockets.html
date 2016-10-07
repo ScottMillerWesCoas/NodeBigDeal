@@ -36,7 +36,7 @@
     $('#status').html('Twitter Searcher!<br><img src="https://upload.wikimedia.org/wikipedia/en/thumb/9/9f/Twitter_bird_logo_2012.svg/600px-Twitter_bird_logo_2012.svg.png" width=20%/>'); 
   }); 
   socket.on('messages', function(name, tweet){
-      $('#game-box').prepend('<p style="background-color: white; border: 2px solid black; border-radius: 10px; color:' + getRandomColor() + '">' + name + ': ' + tweet + '</p>')
+      $('#game-box').prepend('<p style="background-color: white; border: 2px solid black; border-radius: 10px; color:' + getRandomColor() + '"><b>' + name + '</b>: ' + tweet + '</p>')
   });
   $('#target').click(function(e){
     var message = $('#chat').val(); 
