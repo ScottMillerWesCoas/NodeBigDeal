@@ -24,38 +24,6 @@ var storeMessages = function(data){
  // }); 
 }; 
 
-    function getTweets(query){
-      twitter.stream('statuses/filter', {track: query}, function(stream){
-        
-        stream.on('data', function(data){
-          var name, tweet; 
-          for (var x in data){
-            if (x === 'user'){
-              for (var y in data[x]){
-                if (y === 'screen_name') {
-                 // console.log('\n' + data[x][y] + ':');
-                 
-              }
-            }
-          }
-        }
-          for (var z in data){
-            if (z === 'text') {
-              console.log(data[z]);
-              jtweets.push(data[z]); 
-          }
-        } 
-          setTimeout(function(){
-          stream.destroy(); 
-        }, 4000); 
-
-      }); 
-    });
-  }
-    
-
-
-
 io.on('connection', function(client){
 
   console.log('client connected...'); 
@@ -97,10 +65,6 @@ io.on('connection', function(client){
       }); 
     }, 3000); 
 }); 
-    // client.broadcast.emit('messages', nickname + ': ' + data); 
-    // client.emit('messages', nickname + ': ' + data); 
-
-    
 
     });
     
@@ -140,11 +104,6 @@ server.listen(8080, function(){
   console.log('up on 8080'); 
 }); 
 
-
-
-app.get('/twitter', function(req, res){
-  res.sendFile(__dirname + '/twitter.html'); 
-});
 
 
 
